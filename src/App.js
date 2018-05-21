@@ -98,11 +98,9 @@ class App extends Component {
                 />
                 <br/>
                 <Button onClick={this.handleSubmit}>Submit</Button>
-                <button >a</button>
               </CardWrapper>
             </div>
           </Wrapper>
-          
           <Recite sum={sum} allDestination={allDestination} allQubic={allQubic} handleCount={this.state.count} />
         </MuiThemeProvider>
       </div>
@@ -112,7 +110,7 @@ class App extends Component {
 
 const CardWrapper = styled.div`
 	width: 260px;
-	height: 200px;
+	height: 300px;
 	margin: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	background-color: white;
@@ -136,7 +134,8 @@ const Button = styled.button`
 	text-decoration:none;
 	text-shadow:0px 1px 0px #1570cd;
 	background-color:#1e62d0;
-	margin: 10px;
+  margin: 10px;
+  margin-top: 50px;
 `;
 
 
