@@ -107,7 +107,7 @@ class Register extends Component {
                 onChange={this.setValue}
               />
               <br />
-              <Button onClick={this.handleSubmit}>Submit</Button>
+              <Button onClick={this.handleSubmit}>Registrer</Button>
             </CardWrapper>
           </div>
         </Wrapper>
@@ -139,17 +139,17 @@ const CardWrapper = styled.div`
 
 const Button = styled.button`
     border: 1px solid #337fed;
-    border-radius:6px;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
     font-family:Arial;
-    font-size:15px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #1570cd;
-    background-color:#1e62d0;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1570cd;
+    background-color: #5DB5A4;
     margin: 10px;
     margin-top: 50px;
   `;

@@ -24,11 +24,13 @@ class Navbar extends Component {
     return (
       <Paper zDepth={1} style={{ position: 'absolute', bottom: '0' }}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
+        <Link to="/test">
           <BottomNavigationItem
             label="Profil"
             icon={user}
             onClick={() => this.select(0)}
           />
+          </Link>
           <Link to="/">
             <BottomNavigationItem
               label="Registrer arbeid"
