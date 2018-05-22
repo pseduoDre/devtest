@@ -33,24 +33,24 @@ class Card extends Component {
         return(
             <div>
                 <CardWrapper>
-										<TextField
-											name="destination"
-											type="number"
-											hintText="Seddelnummer"
-											floatingLabelText="Skriv inn seddelnummer"
-											style={{	width: '200px'	}}
-											onChange={this.props.setValue}
-										/>
-										<TextField
-											name="valueQubic"
-											type="number"
-											hintText="Kubikk"
-											floatingLabelText="Kubikk"
-											style={{	width: '200px'	}}
-											onChange={this.props.setValue}
-										/>
-										<br/>
-										<Button onClick={this.handleDestination}>Submit</Button>
+					<TextField
+						name="destination"
+						type="number"
+						hintText="Seddelnummer"
+						floatingLabelText="Skriv inn seddelnummer"
+						style={{	width: '200px'	}}
+						onChange={this.props.setValue}
+					/>
+					<TextField
+						name="valueQubic"
+						type="number"
+						hintText="Kubikk"
+						floatingLabelText="Kubikk"
+						style={{	width: '200px'	}}
+						onChange={this.props.setValue}
+					/>
+					<br/>
+					<Button onClick={this.handleDestination}>Submit</Button>
                 </CardWrapper>
             </div>
         );
@@ -82,7 +82,7 @@ const Button = styled.button`
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #1570cd;
-	background-color:#1e62d0;
+	background-color:#5DB5A4;
 	margin: 10px;
 `;
 

@@ -1,93 +1,100 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Navbar from './Navbar';
 
 class Recite extends Component {
-    constructor(props){
-				super(props);
-				this.state = {	visible: false, sum: 0	}
-				this.handleChange = this.handleChange.bind(this);
-		}
+	constructor(props) {
+		super(props);
+		this.state = { visible: false, sum: 0 }
+		this.handleChange = this.handleChange.bind(this);
+	}
 
-		handleChange(){
-			this.setState(prevState => ({
-				visible: !prevState.visible
-			}));
-		}
+	handleChange() {
+		this.setState(prevState => ({
+			visible: !prevState.visible
+		}));
+	}
 
-    render(){
-        return(
-            <div>
-							{this.state.visible ? <ReciteCard sum={this.props.sum} allQubic={this.props.allQubic} allDestination={this.props.allDestination} /> : null}
-							<Button onClick={this.handleChange}>
-								{this.props.handleCount}
-							</Button>
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				{this.state.visible ? <ReciteCard sum={this.props.sum} allQubic={this.props.allQubic} allDestination={this.props.allDestination} /> : null}
+				<Button onClick={this.handleChange}>
+					{this.props.handleCount}
+				</Button>
+				<Navbar handleCount={this.props.handleCount} />
+			</div>
+		);
+	}
 }
 
 export class ReciteCard extends Component {
-	render(){
-		const {allDestination, allQubic, sum} = this.props;
-
-	return (
-		<div>
-			<CardWrapper>
-				<ValuesWrapper>
-				<Destination>Seddelnummer
-					
-					{allDestination.map(dest => {
-						return (
-							<div>{dest}</div>
-						)
-					})}
-					</Destination>
-
-					<Values>Kubikk
-						{allQubic.map(qubic => {
-							return(
-								<div>{qubic}</div>
-							)
-						})}
-					</Values>
+	render() {
+		const { allDestination, allQubic, sum } = this.props;
+		return (
+			<div>
+				<CardWrapper>
+					<ValuesWrapper>
+						<Destination>Seddelnummer
+						{allDestination.map(dest => {
+								return (
+									<DestinationNumber>{dest}</DestinationNumber>
+								)
+							})}
+						</Destination>
+						<Values>Kubikk
+							{allQubic.map(qubic => {
+								return (
+									<QubicSum>{qubic}</QubicSum>
+								)
+							})}
+						</Values>
 					</ValuesWrapper>
-					{console.log('sumtest: ', sum)}
-				<Total>Total antall kubikk: {sum}</Total>
-			</CardWrapper>
-		</div>
-	);
+					<Total>Total antall kubikk: {sum}</Total>
+				</CardWrapper>
+			</div>
+		);
+	}
 }
-}
+
+const QubicSum = styled.div`
+	text-align: left;
+`;
+
+const DestinationNumber = styled.div`
+	text-align: left;
+`;
 
 const ValuesWrapper = styled.div`
-display: flex;
-justify-content: space-between;
+	display: flex;
+	justify-content: flex-start;
 `;
 
 const Destination = styled.div`
-display: flex; 
-flex-direction: column;
-margin: 0 1rem;`;
+	display: flex; 
+	flex-direction: column;
+	margin: 0 1rem;
+`;
 
 const Values = styled.div`
-display: flex; 
-flex-direction: column;
-margin: 0 1rem;
+	display: flex; 
+	flex-direction: column;
+	margin: 0 1rem;
 `;
 
 const Button = styled.button`
 	position: fixed;
 	bottom: 30px;
 	right: 10px;
-  width: 50px;
-  height:	0;
-  padding-bottom: 40px;
-  border-radius: 50%;
-  border:2px solid #cfdcec;
-  overflow:hidden;
-  background: #4679BD; 
-  box-shadow: 0 0 3px gray;
+	width: 50px;
+	height:	50px;
+	padding-bottom: 40px;
+	border-radius: 50%;
+	border: none;
+	overflow:hidden;
+	background: #5DB5A4; 
+	box-shadow: 0 0 3px gray;
 `;
 
 const CardWrapper = styled.div`
