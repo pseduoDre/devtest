@@ -8,6 +8,7 @@ import Snackbar from 'material-ui/Snackbar';
 import Navbar from './components/Navbar';
 import Badge from 'material-ui/Badge';
 import Register from './components/Main';
+import DummyData from './components/DummyData';
 import { BrowserRouter, Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -23,7 +24,7 @@ class App extends Component {
             <Header />
             <Switch>
               <Route exact path="/" component={Register} />
-              <Route exact path="/recite" component={Recite} />
+              <Route exact path="/recite" component={DummyData} />
             </Switch>
         </Fragment>
       </BrowserRouter>
